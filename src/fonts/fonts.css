@@ -1,10 +1,19 @@
 @font-face {
-  font-family: 'Autumn Sweater';
+  font-family: Roboto;
   src:
-    local('Autumn Sweater'),
-    local('Autumn-Sweater'),
-    url(./Autumn-Sweater.woff) format('woff'),
-    url(./Autumn-Sweater.woff2) format('woff2');
-  font-weight: normal;
+    local('Roboto'),
+    url(./Roboto-Light.woff) format('woff'),
+    url(./Roboto-Light.woff2) format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src:
+    local('Roboto'),
+    url(./Roboto-Medium.woff) format('woff'),
+    url(./Roboto-Medium.woff2) format('woff2');
+  font-weight: 500;
   font-display: swap;
 }

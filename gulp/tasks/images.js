@@ -6,8 +6,8 @@ import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import imagemin from 'gulp-imagemin';
 import newer from 'gulp-newer';
-import webp from 'gulp-webp';
-import avif from 'gulp-avif';
+// import webp from 'gulp-webp';
+// import avif from 'gulp-avif';
 
 export default () => {
   return gulp
@@ -20,12 +20,12 @@ export default () => {
         })),
       })
     )
-    .pipe(newer(path.images.dest))
-    .pipe(avif({ quality: 50 }))
+    // .pipe(newer(path.images.dest))
+    // .pipe(avif({ quality: 50 }))
 
-    .pipe(gulp.src(path.images.src))
-    .pipe(newer(path.images.dest))
-    .pipe(webp())
+    // .pipe(gulp.src(path.images.src))
+    // .pipe(newer(path.images.dest))
+    // .pipe(webp())
 
     .pipe(gulp.src(path.images.src))
     .pipe(newer(path.images.dest))

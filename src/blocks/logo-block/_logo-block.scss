@@ -1,0 +1,47 @@
+.logo-block {
+  text-decoration: unset;
+
+  display: inline-grid;
+  gap: 0 1em;
+  padding-block: 1em;
+  box-sizing: border-box;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  color: #004358;
+
+  &__image {
+    grid-row: span 2;
+    display: block;
+    inline-size: clamp(4rem, 3.1197rem + 3.7559vw, 6.5rem);
+    block-size: clamp(2.75rem, 2.662rem + 0.3756vw, 3rem);
+    mask-image: url('../images/logo.svg');
+    mask-repeat: no-repeat;
+    background-color: #004358;
+    mask-position: center;
+    mask-size: contain;
+  }
+
+  &__title {
+    align-self: end;
+
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(1rem, 0.6479rem + 1.5023vw, 2rem);
+  }
+
+  &__subtitle {
+    align-self: start;
+
+    font-size: clamp(0.75rem, 0.706rem + 0.1878vw, 0.875rem);
+    opacity: 0.84;
+  }
+
+  &_place_footer {
+    max-width: 35em;
+    color: var(--text-accent-color);
+
+    .logo-block__image {
+      background-color: currentColor;
+    }
+  }
+}

@@ -70,3 +70,11 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+%main-width {
+  max-width: var(--main-width);
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--padding-side);
+  padding-right: var(--padding-side);
+}

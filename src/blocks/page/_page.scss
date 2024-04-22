@@ -1,0 +1,43 @@
+.page {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    flex: auto;
+  }
+
+  &__section {
+    @extend %main-width;
+    padding-block: clamp(1.875rem, 0.7746rem + 4.6948vw, 5rem);
+
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 0.8099rem + 1.8779vw, 2.5rem);
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 1.1479rem + 1.5023vw, 2.5rem);
+    text-align: center;
+    font-weight: 500;
+  }
+
+  &__caption {
+    font-size: clamp(1.25rem, 0.9859rem + 1.1268vw, 2rem);
+    text-align: center;
+    font-weight: 500;
+    opacity: 0.84;
+  }
+
+  &__list {
+    display: grid;
+    gap: 0.625em;
+    grid-template-columns: repeat(auto-fit, minmax(min(10em, 100%), 1fr));
+    justify-content: center;
+
+    @include media(sm) {
+      grid-template-columns: repeat(auto-fit, minmax(min(14em, 100%), 1fr));
+    }
+  }
+}

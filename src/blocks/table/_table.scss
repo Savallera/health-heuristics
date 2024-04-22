@@ -1,0 +1,125 @@
+.a-table {
+  &__wrap {
+    margin: 1em 0 2em;
+    overflow: auto;
+  }
+}
+
+table {
+  table-layout: fixed;
+  min-width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  border: 1px solid currentColor;
+
+  thead th,
+  thead td,
+  tbody td {
+    border: 1px solid currentColor;
+    padding: clamp(1.25rem, 1.0299rem + 0.939vw, 1.875rem);
+  }
+}
+
+.m-national-table {
+  &.--content-monitoring {
+    .m-national-table__table {
+      max-width: 85em;
+      min-width: unset;
+
+      @include media(md) {
+        width: 100%;
+      }
+    }
+
+    .m-national-table__link span {
+      text-align: left;
+      vertical-align: middle;
+
+      @include media(md) {
+        width: calc(100% / 3);
+        height: 5em;
+      }
+    }
+  }
+
+  & .a-table__wrap {
+    margin: 0;
+  }
+
+  &__table-wrap {
+    margin: 0;
+    overflow: auto;
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 1.1479rem + 1.5023vw, 2.5rem);
+    font-weight: 500;
+    margin-bottom: 0.5em;
+  }
+
+  &__table {
+    display: table;
+
+    table-layout: fixed;
+    min-width: units-px-em(700);
+    max-width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__caption {
+    display: table-row;
+
+    & span {
+      font-weight: 500;
+      font-size: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+      color: var(--text-accent-color);
+
+      padding: 0.875em 1.25rem;
+      border-bottom: 1px solid currentColor;
+
+      display: table-cell;
+      background-color: var(--grey-500);
+
+      text-align: left;
+    }
+  }
+
+  &__link {
+    text-decoration: unset;
+    display: table-row;
+
+    &.--selected span {
+      background-color: var(--main-color);
+      color: var(--text-accent-color);
+    }
+
+    &.--selected:hover span {
+      background-color: var(--grey-300);
+      color: var(--main-color);
+    }
+
+    &:not(.--selected):hover span {
+      background-color: var(--main-color);
+      color: var(--text-accent-color);
+    }
+
+    & span {
+      padding: 0.75em 1.25em;
+      border-top: 1px solid var(--text-accent-color);
+      border-bottom: 1px solid var(--text-accent-color);
+
+      display: table-cell;
+      background-color: var(--bg-secondary-color);
+
+      text-align: center;
+
+      transition: 0.25s ease-in-out;
+      transition-property: background-color, color;
+
+      &:first-child {
+        text-align: left;
+      }
+    }
+  }
+}

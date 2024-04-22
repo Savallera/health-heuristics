@@ -6,7 +6,7 @@ import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import fileInclude from 'gulp-file-include';
 import htmlMinify from 'html-minifier';
-import webpHtml from 'gulp-webp-html';
+// import webpHtml from 'gulp-webp-html';
 
 export default () => {
   const options = {
@@ -24,7 +24,7 @@ export default () => {
     gulp
       .src(path.html.src)
       .pipe(fileInclude())
-      .pipe(webpHtml())
+      // .pipe(webpHtml())
       .pipe(
         plumber({
           errorHandler: notify.onError((error) => ({

@@ -1,0 +1,104 @@
+.popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.54);
+  animation: fade-in 0.5s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto;
+  display: none;
+
+  &__card {
+    margin: auto;
+    padding: clamp(1.5rem, 0.9278rem + 2.4413vw, 3.125rem);
+    max-width: 100%;
+    animation: popup-show 0.5s 0.05s ease-in-out;
+    background-color: var(--bg-main-color);
+
+    @include media(md) {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      border-radius: 5px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 1.1479rem + 1.5023vw, 2.5rem);
+    text-align: center;
+    font-weight: 500;
+    flex: auto;
+  }
+
+  &__close-button {
+    appearance: none;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+    &:only-child {
+      margin-top: -1.5vmax;
+      margin-right: -1.5vmax;
+      margin-left: auto;
+      @include box(1.5em);
+    }
+
+    margin-left: 1.25rem;
+    flex: none;
+
+    @include box(1.25em);
+    cursor: pointer;
+
+    &:hover:before {
+      background-color: #e03c11;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      @include box(inherit);
+      mask: url('../images/close.svg') no-repeat;
+      background-color: var(--grey-400);
+      transition: background-color 0.25s ease-in-out;
+    }
+
+    @include media(sm) {
+      &:only-child {
+        margin-top: -1.5em;
+        margin-right: -1.5em;
+      }
+    }
+  }
+
+  &_opened {
+    display: flex;
+  }
+
+  @include media(sm) {
+    padding: 1em;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popup-show {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0.5em, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

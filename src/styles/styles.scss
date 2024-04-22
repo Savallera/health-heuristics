@@ -5,23 +5,16 @@
 @import './variables';
 
 // UI
-// @import '../blocks/icon/icon';
-// @import '../blocks/icon-button/icon-button';
-// @import '../blocks/button/button';
-// @import '../blocks/field/field';
+@import '../blocks/logo-block/logo-block';
+@import '../blocks/company-card/company-card';
+@import '../blocks/popup/popup';
+@import '../blocks/table/table';
 
 // layout
-// @import '../blocks/page/page';
+@import '../blocks/page/page';
 @import '../blocks/header/header';
 @import '../blocks/footer/footer';
 
-// Sections
-// @import '../blocks/not-found/not-found';
-
-// Modals
-// @import '../blocks/popup/popup';
-
-// Blocks
-// @import '../blocks/menu/menu';
-// @import '../blocks/card/card';
-// @import '../blocks/visually-hidden/visually-hidden';
+.--hide {
+  display: none;
+}
