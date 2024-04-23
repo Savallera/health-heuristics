@@ -1,5 +1,13 @@
 // Модальное окно
 const BODY = document.body;
+
+// Прелодер
+const mainPreloader = document.querySelector('.preloader');
+const hideMainPreloader = () => {
+  mainPreloader.classList.add('preloader_hidden');
+};
+
+// Модальное окно
 const modalContainer = document.querySelector('.popup_content_monitoring');
 const modalContent = modalContainer.querySelector('.popup__body');
 const companyCards = document.querySelectorAll('.company-card');
@@ -15,27 +23,25 @@ const closeModalContainer = function () {
   BODY.style.overflow = '';
   modalContainer.classList.remove('popup_opened');
 };
-
-function hideTableContent() {
+const hideTableContent = function () {
   Array.from(modalContent.children).map((children) => {
     children.classList.add('--hide');
   });
-}
-
-function openPopupTableContent(element) {
+};
+const openPopupTableContent = function (element) {
   hideTableContent();
-
   document
     .getElementById(element.dataset.id + '_table')
     ?.classList.remove('--hide');
   openModalContainer();
-}
+};
 
 companyCards.forEach((element) =>
   element.addEventListener('click', () => {
     openPopupTableContent(element);
   })
 );
+
 modalContainer.addEventListener('click', (evt) => {
   if (
     evt.target.classList.contains('popup_content_monitoring') ||
@@ -43,4 +49,8 @@ modalContainer.addEventListener('click', (evt) => {
   ) {
     closeModalContainer();
   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  hideMainPreloader();
 });
