@@ -14,10 +14,16 @@
   }
 
   &__author {
-    margin: 0.5em 0 0.5em auto;
+    flex: auto;
     color: var(--text-accent-secondary-color);
-    font-size: clamp(0.875rem, 0.743rem + 0.5634vw, 1.25rem);
-    text-align: right;
+    font-size: 1em;
+    line-height: 2;
+    text-align: center;
+
+    @include media(sm) {
+      margin: 0.5em 0 0.5em auto;
+      text-align: right;
+    }
   }
 
   &__link {

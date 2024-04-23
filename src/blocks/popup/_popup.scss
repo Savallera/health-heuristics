@@ -62,7 +62,7 @@
       display: inline-block;
       @include box(inherit);
       mask: url('../images/close.svg') no-repeat;
-      background-color: var(--grey-400);
+      background-color: #adb5bd;
       transition: background-color 0.25s ease-in-out;
     }
 
